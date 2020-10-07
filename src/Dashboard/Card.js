@@ -8,4 +8,8 @@ export const Card = styled.div`
     box-shadow: 0px 3px 5px ${medGray};
     box-sizing: border-top;
     ${({height}) => height && `height: ${height}px;`}
+
+    @media (max-width: 1200px) {
+        padding: 10px;
+    }
 `
