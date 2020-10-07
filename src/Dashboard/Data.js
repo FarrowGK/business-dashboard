@@ -25,3 +25,32 @@ export const charData = [{
     data: generateData(12, 5, 0.5),
     color: '#C1FAD7'
 }]
+
+const months = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'Septemeber',
+    'October',
+    'Novemeber',
+    'Decemeber'
+]
+
+function format(num){
+    return `$${num} Billion.`
+}
+
+export const tableRows = months.map((month, i) => ({
+    month,
+    phones: format(charData[0].data[i]),
+    services: format(charData[1].data[i]),
+    laptops: format(charData[2].data[i]),
+    tables: format(charData[3].data[i])
+}));
+
+console.log(tableRows);
