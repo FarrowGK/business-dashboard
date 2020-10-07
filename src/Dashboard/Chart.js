@@ -3,22 +3,39 @@ import { Card } from './Card';
 
 import Highcharts from 'highcharts';
 import HighChartsReact from 'highcharts-react-official';
+import { charData } from './Data';
 
 const options = {
     chart: {
         height: '360px',
-        type: 'column'
+        type: 'column',
+        style: {
+            fontFamily: `Blinker, sans-serif`
+        }
     },
     title: {
-        text: "My chart"
+        text: "Revenue by Product"
     },
     xAxis: {
-        categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
+        categories: [
+            'Jan',
+            'Feb',
+            'Mar',
+            'Apr',
+            'May',
+            'June',
+            'July',
+            'Aug',
+            'Sep',
+            'Oct',
+            'Nov',
+            'Dec'
+        ]
     },
     yAxis: {
         min: 0,
         title: {
-            text: "Total fruit consumption"
+            text: "Billions of Dollars"
         }
     },
     toolTip: {
@@ -27,19 +44,11 @@ const options = {
     },
     plotOptions: {
         column: {
-            stacking: 'percent'
+            stacking: 'normal',
+            borderWidth: 0
         }
     },
-    series: [{
-        name: 'John',
-        data: [5, 3, 4, 7, 2]
-    }, {
-        name: 'Jane',
-        data: [2, 2, 3, 2, 1]
-    }, {
-        name: 'Joe',
-        data: [3, 4, 4, 2, 5]
-    }]
+    series: charData,
 }
 
 export function Chart() {
